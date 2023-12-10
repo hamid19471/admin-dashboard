@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .lng_hover {
+    @apply hover:bg-slate-300 hover:text-black hover:rounded-lg transition-colors duration-200;
+  }
+  .lng_show {
+    @apply scale-100 transition-all opacity-100;
+  }
+  .lng_hide {
+    @apply scale-0 transition-all opacity-0;
+  }
+}
+
+@font-face {
+  font-family: "IRANYekan";
+  src: url("/fonts/iranyekan/woff2/IRANYekanWebRegular.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANYekan";
+  src: url("/fonts/iranyekan/woff2/IRANYekanWebBold.woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IRANYekan";
+  src: url("/fonts/iranyekan/woff2/IRANYekanWebLight.woff2");
+  font-weight: 300;
+  font-style: normal;
+}
+
+.aj-error {
+  color: red;
+}
