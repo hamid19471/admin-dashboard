@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import ChangeLanguage from "../components/ui/ChangeLanguage";
+import ChangeLanguage from "../components/ChangeLnaguage";
 
 const IdentityLayout = () => {
   return (
