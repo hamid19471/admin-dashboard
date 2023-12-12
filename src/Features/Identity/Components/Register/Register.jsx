@@ -12,19 +12,25 @@ import {
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import { useTranslation } from "react-i18next";
 
 const Register = () => {
+  const { t } = useTranslation();
   const formValidation = {
-    mobile: { required: "شماره تماس ضروری است" },
+    mobile: { required: t("register.formValidation.mobileValidation") },
     password: {
-      required: "رمز عبور ضروری است",
-      minLength: { value: 8, message: "رمز عبور باید حداقل 8 کاراکتر باشد" },
+      required: t("register.formValidation.passwordValidation"),
+      minLength: {
+        value: 8,
+        message: t("register.formValidation.passwordLength"),
+      },
     },
     confirmPassword: {
-      required: "تکرار رمز عبور ضروری است",
+      required: t("register.formValidation.passwordLength"),
       validate: (value) => {
         return (
-          confirmPasswordChecking === value || "رمز عبور وارد شده برابر نیست"
+          confirmPasswordChecking === value ||
+          t("register.formValidation.confirPasswordChecking")
         );
       },
     },
@@ -59,7 +65,7 @@ const Register = () => {
   useEffect(() => {
     if (isSuccess) {
       setTimeout(() => {
-        toast.success("ثبت نام با موفقیت انجام شد. لطفا وارد شوید");
+        toast.success(t("register.formValidation.successConfirmation"));
         navigate("/login");
       }, 3000);
     }
@@ -75,13 +81,11 @@ const Register = () => {
       <div className="flex flex-col items-center justify-center gap-8">
         <img src={logo} alt="webdream-studio" className="w-2/3 items-center" />
         <div>
-          <h1 className="font-semibold text-xl">
-            جهت استفاده از خدمات سایت ثبت نام کنید
-          </h1>
+          <h1 className="font-semibold text-xl">{t("register.mainTitle")}</h1>
           <p className="font-bold text-lg mt-2">
-            قبلا ثبت نام کردید؟{" "}
+            {t("register.description")}{" "}
             <span className="text-blue-500">
-              <Link to="/login">وارد شوید</Link>
+              <Link to="/login">{t("register.loginLink")}</Link>
             </span>
           </p>
         </div>
@@ -94,12 +98,14 @@ const Register = () => {
           <div>
             <label className="form-control w-full max-w-xs">
               <div className="label">
-                <span className="label-text">شماره تماس</span>
+                <span className="label-text">
+                  {t("register.formLabels.mobile")}
+                </span>
               </div>
             </label>
             <input
               type="text"
-              placeholder="شماره تماس خود را وارد کنید"
+              placeholder={`${t("register.formPlaceholders.mobile")}`}
               className={`input input-bordered w-full max-w-sm placeholder:text-sm ${
                 errors.mobile && "input-error"
               }`}
@@ -118,12 +124,14 @@ const Register = () => {
           <div>
             <label className="form-control w-full max-w-xs">
               <div className="label">
-                <span className="label-text">رمز عبور</span>
+                <span className="label-text">
+                  {t("register.formLabels.password")}
+                </span>
               </div>
             </label>
             <input
               type="password"
-              placeholder="رمز عبور را وارد کنید"
+              placeholder={`${t("register.formPlaceholders.password")}`}
               className={`input input-bordered w-full max-w-sm placeholder:text-sm ${
                 errors.password && "input-error"
               }`}
@@ -142,12 +150,14 @@ const Register = () => {
           <div>
             <label className="form-control w-full max-w-xs">
               <div className="label">
-                <span className="label-text">تکرار رمز عبور</span>
+                <span className="label-text">
+                  {t("register.formLabels.confirmPassword")}
+                </span>
               </div>
             </label>
             <input
               type="password"
-              placeholder="رمز عبور را مجدد وارد کنید"
+              placeholder={`${t("register.formPlaceholders.confirmPassword")}`}
               className={`input input-bordered w-full max-w-sm placeholder:text-sm ${
                 errors.confirmPassword && "input-error"
               }`}
@@ -167,7 +177,9 @@ const Register = () => {
           </div>
           <Button
             type="submit"
-            name={`${isSubmitting ? "در حال انجام عملیات" : "ثبت نام کنید"}`}
+            name={`${
+              isSubmitting ? t("register.isSubmiting") : t("register.register")
+            }`}
             className={`${(!isDirty || !isValid) && "btn-disabled"}`}
             disabled={isSubmitting}
           />
