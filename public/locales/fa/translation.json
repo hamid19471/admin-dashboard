@@ -1,5 +1,47 @@
 {
   "register": {
-    "register": "ثبت نام کنید"
+    "register": "ثبت نام کنید",
+    "isSubmiting": "در حال انجام عملیات",
+    "mainTitle": "جهت استفاده از خدمات سایت ثبت نام کنید",
+    "description": "قبلا ثبت نام کردید؟",
+    "loginLink": "وارد شوید",
+    "formLabels": {
+      "mobile": "شماره تماس",
+      "password": "رمز عبور",
+      "confirmPassword": "تکرار رمز عبور"
+    },
+    "formPlaceholders": {
+      "mobile": "شماره تماس خود را وارد کنید",
+      "password": "رمز عبور را وارد کنید",
+      "confirmPassword": "رمز عبور را مجدد وارد کنید"
+    },
+    "formValidation": {
+      "mobileValidation": "شماره تماس ضروری است",
+      "passwordValidation": "رمز عبور ضروری است",
+      "passwordLength": "رمز عبور باید حداقل 8 کاراکتر باشد",
+      "confirmPasswordValidation": "تکرار رمز عبور ضروری است",
+      "confirmPasswordChecking": "تکرار رمز عبور اشتباه است",
+      "successConfirmation": "ثبت نام با موفقیت انجام شد. لطفا وارد شوید"
+    }
+  },
+  "login": {
+    "login": "ورود",
+    "isSubmiting": "در حال انجام عملیات",
+    "mainTitle": "جهت استفاده از خدمات سایت وارد شوید",
+    "description": "ثبت نام نکرده اید؟",
+    "registerLink": "ثبت نام کنید",
+    "formLabels": {
+      "mobile": "شماره تماس",
+      "password": "رمز عبور"
+    },
+    "formPlaceholders": {
+      "mobile": "شماره تماس خود را وارد کنید",
+      "password": "رمز عبور را وارد کنید"
+    },
+    "formValidation": {
+      "mobile": "شماره تماس ضروری است",
+      "password": "رمز عبور ضروری است",
+      "successConfirmation": "ورود با موفقیت انجام شد"
+    }
   }
 }

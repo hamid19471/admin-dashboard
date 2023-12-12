@@ -1,5 +1,46 @@
 {
   "register": {
-    "register": "Register"
+    "register": "Register",
+    "isSubmiting": "Please wait ...",
+    "mainTitle": "Sign up to use our services",
+    "description": "Have an account?",
+    "loginLink": "Sign in",
+    "formLabels": {
+      "mobile": "Phone number",
+      "password": "Password",
+      "confirmPassword": "Confirm password"
+    },
+    "formPlaceholders": {
+      "mobile": "Enter valid phone number",
+      "password": "Enter strong password",
+      "confirmPassword": "Confirm your password"
+    },
+    "formValidation": {
+      "mobileValidation": "Phone number is required",
+      "passwordValidation": "Password is required",
+      "passwordLength": "Password must be at least 8 characters",
+      "confirmPasswordValidation": "Confirm password is required",
+      "confirmPasswordChecking": "Confirm password is not matched",
+      "successConfirmation": "ثبت نام با موفقیت انجام شد. لطفا وارد شوید"
+    }
+  },
+  "login": {
+    "login": "Login",
+    "isSubmiting": "Waiting ...",
+    "mainTitle": "Please login to use our services",
+    "description": "Don't have account?",
+    "registerLink": "Sign up",
+    "formLabels": {
+      "mobile": "Phone number",
+      "password": "Password"
+    },
+    "formPlaceholders": {
+      "mobile": "Enter valid phone number",
+      "password": "Enter password"
+    },
+    "formValidation": {
+      "mobile": "Enter valid phone number",
+      "password": "Incorrect password or phone number"
+    }
   }
 }
