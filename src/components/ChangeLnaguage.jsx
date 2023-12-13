@@ -8,6 +8,9 @@ const ChangeLanguage = () => {
   const [show, setShow] = useState(false);
   const ref = useRef();
   useEffect(() => {
+    setShow(false);
+  }, [language]);
+  useEffect(() => {
     const checkOutSideClick = (e) => {
       if (show && ref.current && !ref.current.contains(e.target)) {
         setShow(false);
