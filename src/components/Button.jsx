@@ -1,7 +1,7 @@
 const Button = ({ name, disabled, onClick, className, type }) => {
   return (
     <button
-      className={`btn btn-primary text-white btn-wide ${className}`}
+      className={`btn btn-primary text-white  ${className}`}
       type={type}
       disabled={disabled}
       onClick={onClick}

@@ -180,7 +180,7 @@ const Register = () => {
             name={`${
               isSubmitting ? t("register.isSubmiting") : t("register.register")
             }`}
-            className={`${(!isDirty || !isValid) && "btn-disabled"}`}
+            className={`btn-wide ${(!isDirty || !isValid) && "btn-disabled"}`}
             disabled={isSubmitting}
           />
         </form>

@@ -126,7 +126,7 @@ const Login = () => {
           <Button
             type="submit"
             name={`${isSubmitting ? t("login.isSubmiting") : t("login.login")}`}
-            className={`${(!isDirty || !isValid) && "btn-disabled"}`}
+            className={`btn-wide ${(!isDirty || !isValid) && "btn-disabled"}`}
             disabled={isSubmitting}
           />
         </form>
