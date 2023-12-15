@@ -1,12 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "./Features/Identity/Components/Login/Login";
 import IdentityLayout from "./layout/IdentityLayout";
-import { RegisterSubmitAction } from "./Features/Identity/Components/Register/RegisterSubmitAction";
+import { RegisterSubmitAction } from "./actions/RegisterSubmitAction";
 import Register from "./Features/Identity/Components/Register/Register";
-import { LoginAction } from "./Features/Identity/Components/Login/LoginAction";
+import { LoginAction } from "./actions/LoginAction";
 import MainLayout from "./layout/MainLayout/MainLayout";
 import Courses from "./pages/Courses";
-import { CoursesLoaderAction } from "./pages/CoursesLoaderAction";
+import { CoursesLoaderAction } from "./actions/CoursesLoaderAction";
+import CoureseCategories from "./pages/CoureseCategories";
 
 export const route = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const route = createBrowserRouter([
         element: <Courses />,
         index: true,
         loader: CoursesLoaderAction,
+      },
+      {
+        path: "/course-categories",
+        element: <CoureseCategories />,
       },
     ],
   },
