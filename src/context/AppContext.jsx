@@ -5,11 +5,15 @@ import { useContext, useReducer, createContext, useEffect } from "react";
 const AppContext = createContext();
 const initialState = {
   language: localStorage.getItem("language") || "fa",
+  sideBar: false,
 };
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(appReducer, initialState);
   const { i18n } = useTranslation();
+  const toggleSideBar = () => {
+    dispatch({ type: "TOGGLE_SIDEBAR" });
+  };
   const changeLanguage = (language) => {
     dispatch({ type: "CHANGE_LANGUAGE", payload: language });
   };
@@ -19,7 +23,7 @@ const AppProvider = ({ children }) => {
     document.documentElement.dir = state.language === "fa" ? "rtl" : "ltr";
   }, [state.language]);
   return (
-    <AppContext.Provider value={{ ...state, changeLanguage }}>
+    <AppContext.Provider value={{ ...state, changeLanguage, toggleSideBar }}>
       {children}
     </AppContext.Provider>
   );
@@ -30,3 +34,4 @@ const useAppContext = () => {
 };
 
 export { AppProvider, useAppContext };
+
