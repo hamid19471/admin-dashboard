@@ -5,7 +5,7 @@ import "./core/i18n";
 const App = () => {
   return (
     <>
-      <RouterProvider router={route} />;
+      <RouterProvider router={route} />
       <Toaster position="bottom-center" />
     </>
   );
