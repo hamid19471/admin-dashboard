@@ -12,6 +12,12 @@
   .lng_hide {
     @apply scale-0 transition-all opacity-0;
   }
+  .aj-sidebar-show {
+    @apply translate-x-0 transition-all duration-300;
+  }
+  .aj-sidebar-hide {
+    @apply translate-x-[270px] w-0 transition-all duration-300;
+  }
 }
 
 @font-face {
