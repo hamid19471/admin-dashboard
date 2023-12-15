@@ -1,3 +1,7 @@
+import {
+  ClockIcon,
+  ChatBubbleLeftEllipsisIcon,
+} from "@heroicons/react/24/solid";
 const CourseCard = ({
   title,
   duration,
@@ -27,8 +31,14 @@ const CourseCard = ({
         </p>
       </div>
       <div className="flex items-center justify-between my-3 pt-4 border-t-[1px] border-slate-400/20">
-        <p className="text-sm text-white">{` شرکت کنندگان: ${numOfReviews} نفر`}</p>
-        <p className="text-xs text-white bg-violet-500 px-3 py-1 rounded-full">{`مدت زمان: ${duration} دقیقه`}</p>
+        <div className="flex gap-2">
+          <ChatBubbleLeftEllipsisIcon className="h-4 w-4 text-white" />
+          <p className="text-sm text-white">{`${numOfReviews} نفر`}</p>
+        </div>
+        <div className="flex items-center justify-center gap-1 text-xs text-white bg-violet-500 px-3 py-1 rounded-full">
+          <ClockIcon className="h-4 w-4 text-white" />
+          <p>{`${duration} ساعت`}</p>
+        </div>
       </div>
     </div>
   );
