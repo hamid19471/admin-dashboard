@@ -2,7 +2,9 @@ import {
   ClockIcon,
   ChatBubbleLeftEllipsisIcon,
 } from "@heroicons/react/24/solid";
+import { Link } from "react-router-dom";
 const CourseCard = ({
+  id,
   title,
   duration,
   coverImageUrl,
@@ -20,7 +22,9 @@ const CourseCard = ({
         />
       </div>
       <div className="flex items-center justify-between px-3 text-white -mt-8 mb-3">
-        <h4 className="md:text-xs lg:text-sm">{title}</h4>
+        <h4 className="md:text-xs lg:text-sm">
+          <Link to={`/courses/${id}`}>{title}</Link>
+        </h4>
         <p className="bg-blue-500 text-white px-3 py-1 rounded-full text-xs">
           {courseLevel}
         </p>
