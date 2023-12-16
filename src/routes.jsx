@@ -8,6 +8,8 @@ import MainLayout from "./layout/MainLayout/MainLayout";
 import Courses from "./pages/Courses";
 import { CoursesLoaderAction } from "./actions/CoursesLoaderAction";
 import CoureseCategories from "./pages/CoureseCategories";
+import SingleCourse from "./Features/Courses/SingleCourse";
+import { SingleCourseLoader } from "./actions/SingleCourseLoader";
 
 export const route = createBrowserRouter([
   {
@@ -22,6 +24,11 @@ export const route = createBrowserRouter([
       {
         path: "/course-categories",
         element: <CoureseCategories />,
+      },
+      {
+        path: "/courses/:id",
+        element: <SingleCourse />,
+        loader: SingleCourseLoader,
       },
     ],
   },
