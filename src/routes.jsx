@@ -10,6 +10,7 @@ import { CoursesLoaderAction } from "./actions/CoursesLoaderAction";
 import CoureseCategories from "./pages/CoureseCategories";
 import SingleCourse from "./Features/Courses/SingleCourse";
 import { SingleCourseLoader } from "./actions/SingleCourseLoader";
+import { CategoriesLoader } from "./actions/CategoriesLoader";
 
 export const route = createBrowserRouter([
   {
@@ -24,6 +25,7 @@ export const route = createBrowserRouter([
       {
         path: "/course-categories",
         element: <CoureseCategories />,
+        loader: CategoriesLoader,
       },
       {
         path: "/courses/:id",
