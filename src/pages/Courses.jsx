@@ -2,6 +2,7 @@ import { Await, useLoaderData } from "react-router-dom";
 import Button from "../components/Button";
 import CourseList from "../Features/Courses/CoursList";
 import { Suspense } from "react";
+import Loader from "../components/Loader";
 const Courses = () => {
   const data = useLoaderData();
   return (
@@ -11,7 +12,7 @@ const Courses = () => {
         <Button name="افزودن دوره جدید" />
       </div>
       <div className="mt-6 w-full">
-        <Suspense fallback={<p>در حال دریافت اطلاعات ...</p>}>
+        <Suspense fallback={<Loader />}>
           <Await resolve={data.courses}>
             {(LoadedData) => <CourseList courses={LoadedData} />}
           </Await>

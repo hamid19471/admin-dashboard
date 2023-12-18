@@ -1,11 +1,12 @@
 import { AcademicCapIcon, ClockIcon } from "@heroicons/react/24/solid";
 import { Suspense } from "react";
 import { useLoaderData, Await } from "react-router-dom";
+import Loader from "../../components/Loader";
 const SingleCourse = () => {
   const data = useLoaderData();
   return (
     <div>
-      <Suspense fallback={<p>در حال دریافت اطلاعات ...</p>}>
+      <Suspense fallback={<Loader />}>
         <Await resolve={data.singleCourse}>
           {(SingleCourse) => (
             <div>
@@ -41,7 +42,7 @@ const SingleCourse = () => {
                   <p>{SingleCourse.description}</p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5numOfChapters gap-3 items-center justify-between mt-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5  gap-3 items-center justify-between mt-12">
                 <div className="flex flex-col gap-3 items-center justify-center p-8 bg-slate-600 rounded-xl">
                   <h3 className="text-white text-lg font-bold">قیمت دوره</h3>
                   <p className="text-4xl text-slate-300">
