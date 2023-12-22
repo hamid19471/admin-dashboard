@@ -1,8 +1,13 @@
+import { useNavigation } from "react-router-dom";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
+import Pagination from "../../components/Pagination";
+import Loader from "../../components/Loader";
 const CategoriesList = ({ categories: { totalRecords, data } }) => {
+  const navigation = useNavigation();
   return (
     <div>
-      <table className="table">
+      {navigation.state !== "idle" && <Loader />}
+      <table className={`table ${navigation.state !== "idle" && "opacity-25"}`}>
         <thead>
           <tr className="text-sm text-white">
             <th>نام</th>
@@ -25,6 +30,9 @@ const CategoriesList = ({ categories: { totalRecords, data } }) => {
           ))}
         </tbody>
       </table>
+      <div>
+        <Pagination totalRecords={totalRecords} />
+      </div>
     </div>
   );
 };

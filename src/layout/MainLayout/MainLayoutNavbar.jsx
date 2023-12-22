@@ -8,7 +8,7 @@ const MainLayoutNavbar = () => {
   return (
     <nav className=" flex items-center justify-between bg-slate-700 py-3 px-3 w-full rounded-t-xl ">
       <div className="flex items-center gap-3 cursor-pointer">
-        <div className="bg-slate-900 p-2 rounded-full" onClick={toggleSideBar}>
+        <div className="bg-blue-500 p-2 rounded-full" onClick={toggleSideBar}>
           <Bars4Icon className="w-6 h-6 text-white" />
         </div>
         <ChangeLanguage />
