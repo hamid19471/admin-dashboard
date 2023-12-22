@@ -8,7 +8,6 @@ const IdentityLayout = () => {
         <nav>
           <ChangeLanguage />
         </nav>
-        <div>asadi</div>
       </header>
       <main className="w-full md:px-12 flex items-center justify-center h-full">
         <Outlet />
