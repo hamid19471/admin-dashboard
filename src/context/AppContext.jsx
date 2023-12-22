@@ -5,7 +5,7 @@ import { useContext, useReducer, createContext, useEffect } from "react";
 const AppContext = createContext();
 const initialState = {
   language: localStorage.getItem("language") || "fa",
-  sideBar: false,
+  sideBar: true,
 };
 
 const AppProvider = ({ children }) => {
@@ -34,4 +34,3 @@ const useAppContext = () => {
 };
 
 export { AppProvider, useAppContext };
-
