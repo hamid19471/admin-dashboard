@@ -2,8 +2,12 @@ import { useNavigation } from "react-router-dom";
 import { PencilSquareIcon, TrashIcon } from "@heroicons/react/24/solid";
 import Pagination from "../../components/Pagination";
 import Loader from "../../components/Loader";
-const CategoriesList = ({ categories: { totalRecords, data } }) => {
+const CategoriesList = ({
+  categories: { totalRecords, data },
+  setDeletCategory,
+}) => {
   const navigation = useNavigation();
+
   return (
     <div>
       {navigation.state !== "idle" && <Loader />}
@@ -22,7 +26,7 @@ const CategoriesList = ({ categories: { totalRecords, data } }) => {
                 <button>
                   <PencilSquareIcon className="w-4 h-4" />
                 </button>
-                <button>
+                <button onClick={() => setDeletCategory(category.id)}>
                   <TrashIcon className="w-4 h-4" />
                 </button>
               </td>
